@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7f6;
+    color: #222;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 12px;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+/* Title */
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Moves and Score */
+
+.stats {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.stats div {
+    flex: 1;
+
+    background: white;
+    padding: 10px;
+
+    border-radius: 12px;
+
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* Game Board */
+
+.game-board {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+
+    max-width: 360px;
+    margin: 0 auto 18px;
+}
+
+/* Cards */
+
+.card {
+    aspect-ratio: 1 / 1;
+
+    border: none;
+    border-radius: 14px;
+
+    background: #2f6fed;
+
+    font-size: 36px;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+
+    user-select: none;
+
+    transition: transform 0.15s;
+}
+
+/* Open / Matched Cards */
+
+.card.open,
+.card.matched {
+    background: white;
+}
+
+.card.matched {
+    border: 3px solid #4caf50;
+}
+
+/* Restart Button */
+
+#restart-btn {
+    width: 100%;
+    max-width: 240px;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #333;
+    color: white;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* Touch feedback */
+
+.card:active,
+#restart-btn:active {
+    transform: scale(0.96);
+}
+
+/* Raspberry Pi 3.5-inch screen */
+
+@media (max-width: 400px) {
+
+    body {
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
