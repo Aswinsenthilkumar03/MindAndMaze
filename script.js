@@ -1,9 +1,12 @@
-const symbols = [
-    "🍎", "🍎",
-    "⭐", "⭐",
-    "🌸", "🌸",
-    "🐟", "🐟"
+const allSymbols = [
+    "1", "1",
+    "2", "2",
+    "3", "3",
+    "4", "4"
 ];
+
+let symbols = allSymbols.slice(0,8);
+
 
 let firstCard = null;
 let secondCard = null;
