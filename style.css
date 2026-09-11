@@ -15,44 +15,76 @@ body {
     justify-content: center;
     align-items: center;
 
-    padding: 12px;
+    padding: 5px;
 }
 
 .game-container {
     width: 100%;
-    max-width: 420px;
+    max-width: 470px;
     text-align: center;
 }
 
-/* Title */
-
 h1 {
-    font-size: 28px;
-    margin-bottom: 5px;
+    font-size: 22px;
+    margin-bottom: 2px;
 }
 
 .subtitle {
-    font-size: 18px;
-    margin-bottom: 15px;
+    font-size: 14px;
+    margin-bottom: 6px;
 }
 
-/* Moves and Score */
+/* Difficulty Buttons */
+
+.difficulty {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 6px;
+}
+
+.difficulty button {
+    flex: 1;
+
+    padding: 6px 3px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: white;
+    color: #222;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.difficulty button:active {
+    transform: scale(0.96);
+}
+
+.difficulty button.active {
+    background: #2f6fed;
+    color: white;
+}
+
+/* Stats */
 
 .stats {
     display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
+    gap: 5px;
+    margin-bottom: 6px;
 }
 
 .stats div {
     flex: 1;
 
     background: white;
-    padding: 10px;
+    padding: 5px;
 
-    border-radius: 12px;
+    border-radius: 7px;
 
-    font-size: 17px;
+    font-size: 13px;
     font-weight: bold;
 }
 
@@ -60,26 +92,25 @@ h1 {
 
 .game-board {
     display: grid;
-
     grid-template-columns: repeat(4, 1fr);
 
-    gap: 10px;
+    gap: 5px;
 
-    max-width: 360px;
-    margin: 0 auto 18px;
+    width: 100%;
+    max-width: 300px;
+
+    margin: 0 auto 7px;
 }
-
-/* Cards */
 
 .card {
     aspect-ratio: 1 / 1;
 
     border: none;
-    border-radius: 14px;
+    border-radius: 8px;
 
     background: #2f6fed;
 
-    font-size: 36px;
+    font-size: 25px;
 
     cursor: pointer;
 
@@ -87,14 +118,12 @@ h1 {
     justify-content: center;
     align-items: center;
 
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 
     user-select: none;
 
     transition: transform 0.15s;
 }
-
-/* Open / Matched Cards */
 
 .card.open,
 .card.matched {
@@ -102,49 +131,91 @@ h1 {
 }
 
 .card.matched {
-    border: 3px solid #4caf50;
+    border: 2px solid #4caf50;
 }
 
-/* Restart Button */
+/* Restart */
 
 #restart-btn {
     width: 100%;
-    max-width: 240px;
+    max-width: 160px;
 
-    padding: 14px;
+    padding: 7px;
 
     border: none;
-    border-radius: 12px;
+    border-radius: 8px;
 
     background: #333;
     color: white;
 
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
 
     cursor: pointer;
 }
 
-/* Touch feedback */
-
 .card:active,
-#restart-btn:active {
+#restart-btn:active,
+.difficulty button:active {
     transform: scale(0.96);
 }
 
-/* Raspberry Pi 3.5-inch screen */
+/* Raspberry Pi 3.5 inch - 480x320 */
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
 
     body {
-        padding: 8px;
+        padding: 3px;
+        align-items: flex-start;
+    }
+
+    .game-container {
+        max-width: 100%;
     }
 
     h1 {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .subtitle {
-        font-size: 16px;
-        margin-bottom: 10px;
+        font-size: 12px;
+        margin-bottom: 4px;
     }
+
+    .difficulty {
+        gap: 4px;
+        margin-bottom: 4px;
+    }
+
+    .difficulty button {
+        padding: 5px 2px;
+        font-size: 12px;
+    }
+
+    .stats {
+        gap: 4px;
+        margin-bottom: 4px;
+    }
+
+    .stats div {
+        padding: 4px;
+        font-size: 12px;
+    }
+
+    .game-board {
+        max-width: 285px;
+        gap: 4px;
+        margin-bottom: 5px;
+    }
+
+    .card {
+        font-size: 22px;
+        border-radius: 7px;
+    }
+
+    #restart-btn {
+        max-width: 140px;
+        padding: 6px;
+        font-size: 13px;
+    }
+}
